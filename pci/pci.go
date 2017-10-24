@@ -1,6 +1,7 @@
 package main
 
 import (
+	"passwd"
 	"fmt"
 	"time"
 	"bytes"
@@ -59,7 +60,7 @@ func readFileAndUpdate(){
 		    panic(err2.Error())
 		}
 
-	    db, err := sql.Open("mysql", "pci:"password"@tcp(127.0.0.1:3306)/pci")
+	    db, err := sql.Open("mysql", "pci:"+ passwd.getSQLPassword() +"@tcp(127.0.0.1:3306)/pci")
 		if err != nil {
 			println(err)
 		}
@@ -148,7 +149,7 @@ func searchForDevices(manuf, dev, sub string) ([]Manufacturer){
 
 	results := []Manufacturer{}
 
-	db, err := sql.Open("mysql", "pci:"password"@tcp(127.0.0.1:3306)/pci")
+	db, err := sql.Open("mysql", "pci:"+ passwd.getSQLPassword() +"@tcp(127.0.0.1:3306)/pci")
 	if err != nil {
 		println(err)
 	}
@@ -564,7 +565,7 @@ func hello(w http.ResponseWriter, r *http.Request) {
 	password := r.URL.Query().Get("password")
 	results := []Manufacturer{}
 
-	if action == "update" && password == "password"{
+	if action == "update" && password == passwd.getAPIPassword(){
 		readFileAndUpdate()
 	} else if action == "search" {
 		manuf := r.URL.Query().Get("vendor")

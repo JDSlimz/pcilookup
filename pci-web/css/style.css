@@ -1,0 +1,98 @@
+/*********************/
+/* DESKTOP           */
+/*********************/
+
+/* EVERYWHERE        */
+
+#logo {
+	width: 200px;
+	height: 100px;
+	display: inline-block;
+	margin: 20px;
+}
+
+#logo img {
+	width: 100%;
+	height: 100%;
+}
+
+div#margin-wrapper {
+	margin: 0 100px 0 100px;
+}
+
+div#header {
+	margin-bottom: 50px;
+	border-bottom: 2px solid #1445b3;
+}
+
+div#adspace {
+	width: 50%;
+	margin: auto;
+	margin-top: 10%;
+}
+
+/* INDEX             */
+
+form {
+	width: 50%;
+	margin: auto;
+}
+
+button#submit {
+	width: 100%;
+}
+
+/* RESULTS           */
+
+#header-form {
+	width: 50%;
+	margin: auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/*********************/
+/* MOBILE            */
+/*********************/
+@media only screen and (min-device-width: 320px) and (max-device-width: 800px) {
+
+/* EVERYWHERE        */
+#logo {
+	display: block;
+	text-align: center;
+	margin: 12.5px auto;
+}
+
+#results-header {
+	border-bottom: 2px solid #1445b3;
+}
+/* INDEX             */
+
+/* RESULTS           */
+#header-form {
+	width: 80%;
+	margin-bottom: 12.5px;
+}
+#header-form .form-group {
+	margin: 0;
+}
+
+#margin-wrapper {
+	margin: 0 10px !important;
+}
+#margin-wrapper #manufacturer {
+	text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+

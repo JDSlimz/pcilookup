@@ -45,11 +45,11 @@ button#submit {
 /* RESULTS           */
 
 #header-form {
-	width: 50%;
+	width: 35%;
 	margin: auto;
 	display: flex;
 	align-items: center;
-	justify-content: center;
+	justify-content: space-around;
 }
 
 /*********************/

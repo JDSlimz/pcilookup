@@ -31,6 +31,27 @@ div#adspace {
 	margin-top: 10%;
 }
 
+div#footer{
+	text-align: center;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+}
+
+#footer #blurb{
+	width: 100%;
+}
+
+#footer img {
+	cursor: pointer;
+}
+
+#footer form{
+	width: auto;
+	margin: 0;
+}
+
 /* INDEX             */
 
 form {

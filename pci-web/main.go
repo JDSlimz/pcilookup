@@ -7,7 +7,6 @@ import(
 
 // compile all templates and cache them
 var templates = template.Must(template.ParseGlob("/home/josh/go/src/pci-web/templates/*"))
-
 func main(){
 	http.Handle("/css/", http.StripPrefix("/css/", http.FileServer(http.Dir("/home/josh/go/src/pci-web/css/"))))
 	http.HandleFunc("/", IndexHandler)

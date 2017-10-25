@@ -36,7 +36,6 @@ type Help struct{
 	Actions string `json:"Actions"`
 	Args    string `json:"Arguments"`
 	Contact string `json:"Contact"`
-	Contact string `json:"Contact"`
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
@@ -60,7 +59,7 @@ func readFileAndUpdate(){
 		    panic(err2.Error())
 		}
 
-	    db, err := sql.Open("mysql", "pci:"+ passwd.getSQLPassword() +"@tcp(127.0.0.1:3306)/pci")
+	    db, err := sql.Open("mysql", "pci:"+ passwd.GetSQLPassword() +"@tcp(127.0.0.1:3306)/pci")
 		if err != nil {
 			println(err)
 		}
@@ -149,7 +148,7 @@ func searchForDevices(manuf, dev, sub string) ([]Manufacturer){
 
 	results := []Manufacturer{}
 
-	db, err := sql.Open("mysql", "pci:"+ passwd.getSQLPassword() +"@tcp(127.0.0.1:3306)/pci")
+	db, err := sql.Open("mysql", "pci:"+ passwd.GetSQLPassword() +"@tcp(127.0.0.1:3306)/pci")
 	if err != nil {
 		println(err)
 	}
@@ -558,6 +557,7 @@ func hello(w http.ResponseWriter, r *http.Request) {
 
     // allow cross domain AJAX requests
     w.Header().Set("Access-Control-Allow-Origin", "*")
+    w.Header().Set("Access-Control-Allow-Headers", "access-control-allow-origin, access-control-allow-headers")
     //Tell the browser we are sending JSON
     w.Header().Set("Content-Type", "application/json")
 
@@ -565,7 +565,7 @@ func hello(w http.ResponseWriter, r *http.Request) {
 	password := r.URL.Query().Get("password")
 	results := []Manufacturer{}
 
-	if action == "update" && password == passwd.getAPIPassword(){
+	if action == "update" && password == passwd.GetAPIPassword(){
 		readFileAndUpdate()
 	} else if action == "search" {
 		manuf := r.URL.Query().Get("vendor")

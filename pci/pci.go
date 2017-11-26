@@ -42,7 +42,7 @@ type Help struct{
 //Read PCI.IDS File, parse contents, put into respective tables in database.
 //////////////////////////////////////////////////////////////////////////////////////////////////
 func readFileAndUpdate(){
-
+	fmt.Println("Update Initiated")
 	url := "https://pci-ids.ucw.cz/v2.2/pci.ids"
 
     var client http.Client
@@ -138,6 +138,7 @@ func readFileAndUpdate(){
 	    	}
 	    	tx.Commit()
 	    }
+	    fmt.Println("Updated Database")
 	}
 }
 

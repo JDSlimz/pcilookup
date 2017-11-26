@@ -1,17 +1,12 @@
 { 
 	"name": "PCI Lookup", 
 	"description": "PCI Lookup is a tool that allows technology professionals to search for device descriptions using their PCI IDs.", 
-	"repository": { "url": "https://github.com/JDSlimz/pcilookup", 
-		"license": "GNU General Public License v3.0",  
-	}, 
-	"participate": { 
-
+	"repository": { 
+		"url": "https://github.com/JDSlimz/pcilookup", 
+		"license": "GNU General Public License v3.0"
 	},
-	"bugs": { 
-
-	}, 
 	"urls": { 
-		"prod": "https://www.pcilookup.com", 
+		"prod": "https://www.pcilookup.com"
 	}, 
 	"keywords": [ "PCI", "ID", "search", "lookup", "database" ] 
 }

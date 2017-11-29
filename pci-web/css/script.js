@@ -11,9 +11,9 @@ $(document).ready(function(){
 			var table = $('#results').DataTable( {
 				"paging": false,
 				"columns": [
-		            { "className": "hex-id" },
-		            { "className": "description" }
-		        ],
+				    { "className": "hex-id" },
+				    { "className": "description" }
+				],
 			} );
 
 			$.each(data, function(i, item) {

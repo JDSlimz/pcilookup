@@ -41,6 +41,7 @@ $(document).ready(function(){
 			    }
 			});
 			table.draw();
+			$('#processingSpinner').hide();
 
 			$('#results tbody').on('click', 'td.details-control', function () {
 		        var tr = $(this).closest('tr');

@@ -539,11 +539,13 @@ func searchForDevices(manuf, dev, sub string) ([]Manufacturer){
 //If input matches the format of the IDs allow it. Otherwise log an inject attempt. 
 //(This is to prevent SQL injection and also for science)
 //////////////////////////////////////////////////////////////////////////////////////////////////
-func cleanText(in string) (bool){
+func cleanText(in string) string{
+
 	match := false
+	clean := ""
 
 	if strings.HasPrefix(in, "0x") || strings.HasPrefix(in, "VEN_") || strings.HasPrefix(in, "DEV_"){
-		in = string(s[len(s)-4:])
+		in = in[len(in)-4:]
 	}
 
 	if len(in) == 4{
@@ -553,7 +555,12 @@ func cleanText(in string) (bool){
 	} else if len(in) == 0{
 		match = true
 	}
-	return match
+
+	if match {
+		clean = in
+	}
+
+	return clean
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
@@ -578,12 +585,8 @@ func hello(w http.ResponseWriter, r *http.Request) {
 		dev := r.URL.Query().Get("device")
 		sub := r.URL.Query().Get("subdevice")
 
-		if cleanText(manuf) && cleanText(dev) && cleanText(sub){
-			results = searchForDevices(manuf, dev, sub)
-			json.NewEncoder(w).Encode(results)
-		} else {
-			json.NewEncoder(w).Encode("")
-		}
+		results = searchForDevices(cleanText(manuf), cleanText(dev), cleanText(sub))
+		json.NewEncoder(w).Encode(results)
 	} else {
 		help := Help{"to PCILookup!", "search", "vendor, device, subdevice", "rafikithegrouch@gmail.com"}
 		json.NewEncoder(w).Encode(help)

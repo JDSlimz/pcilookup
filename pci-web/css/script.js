@@ -18,30 +18,31 @@ $(document).ready(function(){
 
 			$.each(data, function(i, item) {
 			    $('#manufacturer').html(item.Description);
-			    var devs = item.Devices.length;
-			    if(devs > 0){
-			    	$.each(item.Devices, function(i, item){
-			    		var row = table.row.add([
-		    				item.ID,
-		    				item.Desc
-		    			]);
-			    		if('Sub' in item){
-			    			$.each(item.Sub, function(i, subItem){
-			    				var rowData = row.child();
+			    if (typeof item.Devices !== 'undefined') {
+				    var devs = item.Devices.length;
+				    if(devs > 0){
+				    	$.each(item.Devices, function(i, item){
+				    		var row = table.row.add([
+			    				item.ID,
+			    				item.Desc
+			    			]);
+				    		if('Sub' in item){
+				    			$.each(item.Sub, function(i, subItem){
+				    				var rowData = row.child();
 
-			    				if(rowData == null){
-			    					rowData += subItem.ID + ':' + subItem.Desc + '<br>';
-			    				} else {
-			    					rowData = subItem.ID + ':' + subItem.Desc + '<br>';
-			    				}
-			    				row.child(rowData);
-			    			});
-			    		}
-			    	});
-			    }
+				    				if(rowData == null){
+				    					rowData += subItem.ID + ':' + subItem.Desc + '<br>';
+				    				} else {
+				    					rowData = subItem.ID + ':' + subItem.Desc + '<br>';
+				    				}
+				    				row.child(rowData);
+				    			});
+				    		}
+				    	});
+				    }
+				}
 			});
 			table.draw();
-			$('#processingSpinner').hide();
 
 			$('#results tbody').on('click', 'td.details-control', function () {
 		        var tr = $(this).closest('tr');
@@ -58,10 +59,12 @@ $(document).ready(function(){
 		            tr.addClass('shown');
 		        }
 		    } );
+		    $('#processingSpinner').hide();
 		},
 		error: function(xhr, status, error) {
 			var err = eval("(" + xhr.responseText + ")");
 			console.log(xhr);
+			$('#processingSpinner').hide();
 		}
 	});
 });

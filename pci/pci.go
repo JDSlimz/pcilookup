@@ -541,6 +541,11 @@ func searchForDevices(manuf, dev, sub string) ([]Manufacturer){
 //////////////////////////////////////////////////////////////////////////////////////////////////
 func cleanText(in string) (bool){
 	match := false
+
+	if strings.HasPrefix(in, "0x") || strings.HasPrefix(in, "VEN_") || strings.HasPrefix(in, "DEV_"){
+		in = string(s[len(s)-4:])
+	}
+
 	if len(in) == 4{
 		match, _ = regexp.MatchString("[A-Fa-f0-9]{4}", in)
 	} else if len(in) == 9{

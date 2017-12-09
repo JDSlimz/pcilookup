@@ -21,8 +21,16 @@ div#margin-wrapper {
 }
 
 div#header {
+	display: flex;
+	justify-content: space-between;
+	padding: 0px 25px;
 	margin-bottom: 50px;
 	border-bottom: 2px solid #1445b3;
+}
+
+div#contact{
+	align-self: center;
+	cursor: pointer;
 }
 
 div#adspace {
@@ -52,6 +60,14 @@ div#footer{
 	margin: 0;
 }
 
+.coinLogo{
+	margin: 10px 15px;
+}
+
+.address{
+	word-wrap: break-word;
+}
+
 /* INDEX             */
 
 form {
@@ -61,6 +77,12 @@ form {
 
 button#submit {
 	width: 100%;
+}
+
+#nnImg{
+	width: 50%;
+	margin: 15px auto;
+	display: block;
 }
 
 /* RESULTS           */

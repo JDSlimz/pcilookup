@@ -23,6 +23,7 @@ type Manufacturer struct {
 type Device struct {
 	ID   string `json:"ID"`
 	Desc string `json:"Desc"`
+	Manuf string `json:"Manufacturer,omitempty" bson:",omitempty"`
 	Subs []Sub `json:"Sub,omitempty" bson:",omitempty"`
 }
 
@@ -563,6 +564,48 @@ func cleanText(in string) string{
 	return clean
 }
 
+func getAllDevices() []Device{
+	devices := []Device{}
+
+	db, err := sql.Open("mysql", "pci:"+ passwd.GetSQLPassword() +"@tcp(127.0.0.1:3306)/pci")
+	if err != nil {
+		println(err)
+	}
+	defer db.Close()
+
+	reply, err := db.Query("SELECT id,descrip,manuf FROM dev_ids;")
+	if err != nil {
+		panic(err.Error())
+	}
+
+	for reply.Next() {
+		var device Device
+		var manuf string
+
+		//Get ID and Description
+		err = reply.Scan(&device.ID, &device.Desc, &manuf)
+		if err != nil {
+			panic(err.Error())
+		}
+
+		//Get manufacturer name
+		replytwo, errtwo := db.Query("SELECT descrip FROM manuf_ids WHERE id='" + manuf + "';")
+		if errtwo != nil {
+			panic(errtwo.Error())
+		}
+
+		for replytwo.Next(){
+			errthree := replytwo.Scan(&device.Manuf)
+			if errthree != nil{
+				panic(errthree.Error())
+			}
+		}
+
+		devices = append(devices, device)
+	}
+	return devices
+}
+
 //////////////////////////////////////////////////////////////////////////////////////////////////
 //Get query parameters and run the necessary function.
 //////////////////////////////////////////////////////////////////////////////////////////////////
@@ -587,6 +630,9 @@ func hello(w http.ResponseWriter, r *http.Request) {
 
 		results = searchForDevices(cleanText(manuf), cleanText(dev), cleanText(sub))
 		json.NewEncoder(w).Encode(results)
+	} else if action == "getAll"{
+		allDevs := getAllDevices()
+		json.NewEncoder(w).Encode(allDevs)
 	} else {
 		help := Help{"to PCILookup!", "search", "vendor, device, subdevice", "rafikithegrouch@gmail.com"}
 		json.NewEncoder(w).Encode(help)

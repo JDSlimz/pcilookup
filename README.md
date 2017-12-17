@@ -8,6 +8,6 @@ If there are any complaints regarding this matter I am open to hearing them.
 
 Please feel free to fork and make it better! 
 
-I know it the API code is a little strange (looks like PHP in style because that's what I know)!
+I know the API code is a little strange (looks like PHP in style because that's what I know)!
 
 The web front end is in pci-web and the API backend is in pci.

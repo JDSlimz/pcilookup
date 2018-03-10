@@ -14,9 +14,24 @@ $(document).ready(function(){
 				    { "className": "hex-id" },
 				    { "className": "description" }
 				],
-			} );
+			});
+
+			var vendors = {};
+			var devices = {};
 
 			$.each(data, function(i, item) {
+
+				var vendorID = item.VendorID;
+				var vendorDesc = item.VendorDescrip;
+				var devID = item.ID;
+				var devDesc = item.Desc;
+
+				var vendor = {vendorID:vendorDesc};
+
+				if(vendors.indexOf(vendor) == -1){
+					vendors.push(vendor);
+				}
+
 			    $('#manufacturer').html(item.Description);
 			    if (typeof item.Devices !== 'undefined') {
 				    var devs = item.Devices.length;

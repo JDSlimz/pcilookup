@@ -45,6 +45,15 @@ div#footer{
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: center;
+	position: relative;
+	margin-top: 20px;
+}
+
+#footer>#ad{
+	z-index:5;
+	position: absolute;
+	top:0;
+	width: 50%;
 }
 
 #footer #blurb{

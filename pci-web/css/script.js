@@ -3,8 +3,19 @@ $(document).ready(function(){
 	var ven = getParameterByName("ven");
 	var dev = getParameterByName("dev");
 
-	$.ajax({
-		url: "https://api.pcilookup.com",
+	$('#results').DataTable( {
+		ajax: "https://dev.pcilookup.com?action=search&vendor=" + ven + "&device=" + dev,
+		columns: [
+			{ data: 'Vendor Description' },
+			{ data: 'Vendor ID' },
+			{ data: 'Desc' },
+			{ data: 'ID' }
+		],
+		"sAjaxDataProp": ""
+	} );
+
+	/*$.ajax({
+		url: "https://dev.pcilookup.com",
 		data: {action:'search', vendor: ven, device: dev},
 		dataType: 'json',
 		success: function(data) {
@@ -81,7 +92,7 @@ $(document).ready(function(){
 			console.log(xhr);
 			$('#processingSpinner').hide();
 		}
-	});
+	});*/
 });
 
 function getParameterByName(name, url) {

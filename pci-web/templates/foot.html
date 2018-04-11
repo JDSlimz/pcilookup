@@ -1,131 +1,163 @@
 {{define "footer"}}
 	<div id="footer">
 
-		<img class="coinLogo" src="/css/iotalogo.png" data-toggle="modal" data-target="#iotaModal" />
-		<img class="coinLogo" src="/css/btclogo.png" data-toggle="modal" data-target="#btcModal" />
-		<img class="coinLogo" src="/css/ltclogo.png" data-toggle="modal" data-target="#ltcModal" />
-		
-		<!-- Contact Modal -->
-		<div id="contactModal" class="modal fade" role="dialog">
-		  <div class="modal-dialog">
-
-		    <!-- Modal content-->
-		    <div class="modal-content">
-		      <div class="modal-header">
-		        <button type="button" class="close" data-dismiss="modal">&times;</button>
-		        <h4 class="modal-title">Contact Us</h4>
-		      </div>
-		      <div class="modal-body">
-		      		<form class="form-horizontal">
-
-						<!-- Name input-->
-						<div class="form-group">
-							<label class="col-md-3 control-label" for="name">Name</label>  
-							<div class="col-md-6">
-								<input id="name" name="name" type="text" placeholder="" class="form-control input-md" required="">
-							</div>
-						</div>
-
-						<!-- Email input-->
-						<div class="form-group">
-							<label class="col-md-3 control-label" for="email">E-Mail</label>  
-							<div class="col-md-6">
-								<input id="email" name="email" type="email" placeholder="" class="form-control input-md" required="">
-							</div>
-						</div>
-
-						<!-- Textarea -->
-						<div class="form-group">
-						  <label class="col-md-3 control-label" for="message">Message</label>
-						  <div class="col-md-6">                     
-						    <textarea class="form-control" id="message" name="message">What do you have to say?</textarea>
-						  </div>
-						</div>
-
-						<!-- Button -->
-						<div class="form-group">
-							<label class="col-md-3 control-label" for="submit"></label>
-							<div class="col-md-6">
-								<button id="message" name="action" value="message" type="submit" class="btn btn-primary">Submit</button>
-							</div>
-						</div>
-
-					</form>
-		      </div>
-		    </div>
-
-		  </div>
+		<div id="ad">
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+				<!-- PCI Footer -->
+				<ins class="adsbygoogle"
+				     style="display:inline-block;width:728px;height:90px"
+				     data-ad-client="ca-pub-9712002391641039"
+				     data-ad-test="on"
+				     data-ad-slot="5020699809"></ins>
+				<script>
+				(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
 		</div>
 
-		<!-- Bitcoin Modal -->
-		<div id="btcModal" class="modal fade" role="dialog">
-		  <div class="modal-dialog">
+		<div id="donations">
+			<img class="coinLogo" src="/css/iotalogo.png" data-toggle="modal" data-target="#iotaModal" />
+			<img class="coinLogo" src="/css/btclogo.png" data-toggle="modal" data-target="#btcModal" />
+			<img class="coinLogo" src="/css/ltclogo.png" data-toggle="modal" data-target="#ltcModal" />
+			
+			<!-- Contact Modal -->
+			<div id="contactModal" class="modal fade" role="dialog">
+			  <div class="modal-dialog">
 
-		    <!-- Modal content-->
-		    <div class="modal-content">
-		      <div class="modal-header">
-		        <button type="button" class="close" data-dismiss="modal">&times;</button>
-		        <h4 class="modal-title">Donate Bitcoin</h4>
-		      </div>
-		      <div class="modal-body">
-		        <img src="/css/ltcqr.png" />
-		        <p class="address">1FXCiDcZKswWw1j99tKoTANDqUMjv6TUYR</p>
-		      </div>
-		      <div class="modal-footer">
-		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-		      </div>
-		    </div>
+			    <!-- Modal content-->
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal">&times;</button>
+			        <h4 class="modal-title">Contact Us</h4>
+			      </div>
+			      <div class="modal-body">
+			      		<form class="form-horizontal">
 
-		  </div>
-		</div>
+							<!-- Name input-->
+							<div class="form-group">
+								<label class="col-md-3 control-label" for="name">Name</label>  
+								<div class="col-md-6">
+									<input id="name" name="name" type="text" placeholder="" class="form-control input-md" required="">
+								</div>
+							</div>
 
-		<!-- Litecoin Modal -->
-		<div id="ltcModal" class="modal fade" role="dialog">
-		  <div class="modal-dialog">
+							<!-- Email input-->
+							<div class="form-group">
+								<label class="col-md-3 control-label" for="email">E-Mail</label>  
+								<div class="col-md-6">
+									<input id="email" name="email" type="email" placeholder="" class="form-control input-md" required="">
+								</div>
+							</div>
 
-		    <!-- Modal content-->
-		    <div class="modal-content">
-		      <div class="modal-header">
-		        <button type="button" class="close" data-dismiss="modal">&times;</button>
-		        <h4 class="modal-title">Donate Litecoin</h4>
-		      </div>
-		      <div class="modal-body">
-		      	<img src="/css/ltcqr.png" />
-		        <p class="address">LM4sL1m1YLoMMUnVptcHRrdV6mu96XPNxS</p>
-		      </div>
-		      <div class="modal-footer">
-		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-		      </div>
-		    </div>
+							<!-- Textarea -->
+							<div class="form-group">
+							  <label class="col-md-3 control-label" for="message">Message</label>
+							  <div class="col-md-6">                     
+							    <textarea class="form-control" id="message" name="message">What do you have to say?</textarea>
+							  </div>
+							</div>
 
-		  </div>
-		</div>
+							<!-- Button -->
+							<div class="form-group">
+								<label class="col-md-3 control-label" for="submit"></label>
+								<div class="col-md-6">
+									<button id="message" name="action" value="message" type="submit" class="btn btn-primary">Submit</button>
+								</div>
+							</div>
 
-		<!-- Iota Modal -->
-		<div id="iotaModal" class="modal fade" role="dialog">
-		  <div class="modal-dialog">
+						</form>
+			      </div>
+			    </div>
 
-		    <!-- Modal content-->
-		    <div class="modal-content">
-		      <div class="modal-header">
-		        <button type="button" class="close" data-dismiss="modal">&times;</button>
-		        <h4 class="modal-title">Donate Iota</h4>
-		      </div>
-		      <div class="modal-body">
-		      	<img src="/css/iotaqr.png" />
-		        <p class="address">UXVJIHQVOMLILKXVPNOHBQGVEOPMXOFVKJSNCJAWXSNJH9PYFORHBDKSZAJMUC9CSGBO9ISP9RYZEBMIBAAVTBO9JD</p>
-		      </div>
-		      <div class="modal-footer">
-		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-		      </div>
-		    </div>
+			  </div>
+			</div>
 
-		  </div>
+			<!-- Bitcoin Modal -->
+			<div id="btcModal" class="modal fade" role="dialog">
+			  <div class="modal-dialog">
+
+			    <!-- Modal content-->
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal">&times;</button>
+			        <h4 class="modal-title">Donate Bitcoin</h4>
+			      </div>
+			      <div class="modal-body">
+			        <img src="/css/ltcqr.png" />
+			        <p class="address">1FXCiDcZKswWw1j99tKoTANDqUMjv6TUYR</p>
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			      </div>
+			    </div>
+
+			  </div>
+			</div>
+
+			<!-- Litecoin Modal -->
+			<div id="ltcModal" class="modal fade" role="dialog">
+			  <div class="modal-dialog">
+
+			    <!-- Modal content-->
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal">&times;</button>
+			        <h4 class="modal-title">Donate Litecoin</h4>
+			      </div>
+			      <div class="modal-body">
+			      	<img src="/css/ltcqr.png" />
+			        <p class="address">LM4sL1m1YLoMMUnVptcHRrdV6mu96XPNxS</p>
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			      </div>
+			    </div>
+
+			  </div>
+			</div>
+
+			<!-- Iota Modal -->
+			<div id="iotaModal" class="modal fade" role="dialog">
+			  <div class="modal-dialog">
+
+			    <!-- Modal content-->
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal">&times;</button>
+			        <h4 class="modal-title">Donate Iota</h4>
+			      </div>
+			      <div class="modal-body">
+			      	<img src="/css/iotaqr.png" />
+			        <p class="address">UXVJIHQVOMLILKXVPNOHBQGVEOPMXOFVKJSNCJAWXSNJH9PYFORHBDKSZAJMUC9CSGBO9ISP9RYZEBMIBAAVTBO9JD</p>
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			      </div>
+			    </div>
+
+			  </div>
+			</div>
 		</div>
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
 		<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
 		<script src="/css/bootstrap.min.js"></script>
+
+		<!-- Piwik -->
+		<script type="text/javascript">
+			var _paq = _paq || [];
+			/* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+			_paq.push(['trackPageView']);
+			_paq.push(['enableLinkTracking']);
+			(function() {
+				var u="https://piwik.pcilookup.com/piwik/";
+				_paq.push(['setTrackerUrl', u+'piwik.php']);
+				_paq.push(['setSiteId', '1']);
+				var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+				g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+		    })();
+		</script>
+		<!-- End Piwik Code -->
+		
 	</div>
 {{end}}

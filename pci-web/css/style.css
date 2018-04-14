@@ -5,15 +5,12 @@
 /* EVERYWHERE        */
 
 #logo {
-	width: 200px;
-	height: 100px;
 	display: inline-block;
 	margin: 20px;
 }
 
 #logo img {
-	width: 100%;
-	height: 100%;
+
 }
 
 div#margin-wrapper {
@@ -25,7 +22,7 @@ div#header {
 	justify-content: space-between;
 	padding: 0px 25px;
 	margin-bottom: 50px;
-	border-bottom: 2px solid #1445b3;
+	border-bottom: 2px solid #337ab7;
 }
 
 div#contact{
@@ -51,13 +48,11 @@ div#footer{
 
 #footer>#ad{
 	z-index:5;
-	position: absolute;
-	top:0;
-	width: 50%;
+	width: 100%;
 }
 
-#footer #blurb{
-	width: 100%;
+#support-privacy {
+    width: 100%;
 }
 
 #footer img {
@@ -96,12 +91,22 @@ button#submit {
 
 /* RESULTS           */
 
+#results-header {
+	display: flex;
+	padding: 0px 25px;
+	border-bottom: 2px solid #337ab7;
+}
+
 #header-form {
 	width: 35%;
 	margin: auto;
 	display: flex;
 	align-items: center;
 	justify-content: space-around;
+}
+
+#header-form > .form-group {
+	margin-bottom: 0 !important;
 }
 
 #processingSpinner{
@@ -124,28 +129,51 @@ button#submit {
 #logo {
 	display: block;
 	text-align: center;
-	margin: 12.5px auto;
 }
 
-#results-header {
-	border-bottom: 2px solid #1445b3;
-}
 /* INDEX             */
-
+#logo > img {
+	width: 100%;
+}
 /* RESULTS           */
+#results-header {
+	display: flex;
+	flex-wrap: wrap;
+	border-bottom: 2px solid #337ab7;
+}
+
+#results-header #logo > img {
+	width: 50%;
+}
+
 #header-form {
-	width: 80%;
+	width: 100%;
 	margin-bottom: 12.5px;
 }
+
 #header-form .form-group {
 	margin: 0;
 }
 
-#margin-wrapper {
-	margin: 0 10px !important;
+#header-form .form-control {
+	width: 75%;
 }
+
+#contact {
+	width: 100%;
+	text-align: center;
+}
+
+#margin-wrapper {
+	margin: 0 2px !important;
+}
+
 #margin-wrapper #manufacturer {
 	text-align: center;
+}
+
+table#results {
+    width: 100% !important;
 }
 
 

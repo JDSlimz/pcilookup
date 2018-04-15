@@ -5,12 +5,10 @@
 /* EVERYWHERE        */
 
 #logo {
-	display: inline-block;
-	margin: 20px;
-}
-
-#logo img {
-
+	display: flex;
+	max-width: 50%;
+	align-items: center;
+	justify-content: left;
 }
 
 div#margin-wrapper {
@@ -20,14 +18,28 @@ div#margin-wrapper {
 div#header {
 	display: flex;
 	justify-content: space-between;
-	padding: 0px 25px;
+	padding: 5px 25px;
+	margin-top: 10px;
 	margin-bottom: 50px;
 	border-bottom: 2px solid #337ab7;
 }
 
-div#contact{
-	align-self: center;
+#menu{
+	display: flex;
+	justify-content: right;
+	align-items: center;
+	page-break-after: always;
+	break-after: always;
+}
+
+div#help, div#contact{
 	cursor: pointer;
+	margin: 0px 5px;
+	max-width: 25%;
+}
+
+#logo img, #help>img, #contact>img{
+	max-width: 100%;
 }
 
 div#adspace {
@@ -75,7 +87,7 @@ div#footer{
 /* INDEX             */
 
 form {
-	width: 50%;
+	width: 30%;
 	margin: auto;
 }
 
@@ -95,11 +107,14 @@ button#submit {
 	display: flex;
 	padding: 0px 25px;
 	border-bottom: 2px solid #337ab7;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
 }
 
 #header-form {
 	width: 35%;
-	margin: auto;
+	margin: 10px auto;
 	display: flex;
 	align-items: center;
 	justify-content: space-around;
@@ -135,10 +150,17 @@ button#submit {
 #logo > img {
 	width: 100%;
 }
+
+#search{
+	width: 80%;
+	text-align: center;
+}
 /* RESULTS           */
 #results-header {
 	display: flex;
+	justify-content: space-between;
 	flex-wrap: wrap;
+	margin-top:5px;
 	border-bottom: 2px solid #337ab7;
 }
 
@@ -148,7 +170,7 @@ button#submit {
 
 #header-form {
 	width: 100%;
-	margin-bottom: 12.5px;
+	margin-bottom: 5px;
 }
 
 #header-form .form-group {
@@ -156,7 +178,7 @@ button#submit {
 }
 
 #header-form .form-control {
-	width: 75%;
+	width: 100%;
 }
 
 #contact {

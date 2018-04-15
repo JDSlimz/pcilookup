@@ -11,7 +11,8 @@ $(document).ready(function(){
 			{ data: 'Desc' },
 			{ data: 'ID' }
 		],
-		"sAjaxDataProp": ""
+		"sAjaxDataProp": "",
+		responsive: true
 	} );
 
 	/*$.ajax({

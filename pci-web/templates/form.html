@@ -1,37 +1,28 @@
 {{define "form"}}
-<form class="form-horizontal">
+<form id="search" class="form-horizontal">
 
-	<!-- Text input-->
-	<div class="form-group">
-		<label class="col-md-4 control-label" for="ven">Vendor</label>  
-		<div class="col-md-4">
-			<input id="ven" name="ven" type="text" placeholder="E.g. 10de or Nvidia" class="form-control input-md">
+	<!--Vendor Input-->
+	<div class="form-group row">
+		<label class="col-md-2 control-label" for="ven">Vendor</label>  
+		<div class="col-md-6">
+			<input id="ven" name="ven" placeholder="e.g. 10de or Nvidia" class="form-control input-lg" type="text">
 		</div>
 	</div>
 
-	<!-- Text input-->
-	<div class="form-group">
-		<label class="col-md-4 control-label" for="dev">Device</label>  
-		<div class="col-md-4">
-			<input id="dev" name="dev" type="text" placeholder="E.g. 1b06 or 1080 TI" class="form-control input-md">
+	<!--Device Input-->
+	<div class="form-group row">
+		<label class="col-md-2 control-label" for="dev">Device</label>  
+		<div class="col-md-6">
+			<input id="dev" name="dev" placeholder="e.g. 010b or 1080 TI" class="form-control input-lg" type="text">
 		</div>
 	</div>
 
-	<!-- Text input-->
-	<!-- <div class="form-group">
-		<label class="col-md-4 control-label" for="sub">Sub device</label>  
-		<div class="col-md-4">
-			<input id="sub" name="sub" type="text" placeholder="" class="form-control input-md">
-		</div>
-	</div> -->
-
-	<!-- Button -->
-	<div class="form-group">
-		<label class="col-md-4 control-label" for="submit"></label>
-		<div class="col-md-4">
+	<!--Submit Button-->
+	<div class="form-group row">
+		<label class="col-md-2 control-label" for="submit"></label>
+		<div class="col-md-6">
 			<button id="submit" name="action" value="submit" type="submit" class="btn btn-primary">Submit</button>
 		</div>
 	</div>
-
 </form>
 {{end}}

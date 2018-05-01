@@ -105,7 +105,8 @@ button#submit {
 
 #results-header {
 	display: flex;
-	padding: 0px 25px;
+	margin-top: 10px;
+	padding: 5px 25px;
 	border-bottom: 2px solid #337ab7;
 	flex-wrap: wrap;
 	justify-content: space-between;

@@ -12,7 +12,7 @@
 }
 
 div#margin-wrapper {
-	margin: 0 100px 0 100px;
+	margin: 0 95px;
 }
 
 div#header {
@@ -125,88 +125,76 @@ button#submit {
 	margin-bottom: 0 !important;
 }
 
-#processingSpinner{
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background-color: rgba(0,0,0,0.3);
-}
 /*********************/
 /* MOBILE            */
 /*********************/
 @media only screen and (min-device-width: 320px) and (max-device-width: 800px) {
 
-/* EVERYWHERE        */
-#logo {
-	display: block;
-	text-align: center;
+	/* EVERYWHERE        */
+	#logo {
+		display: block;
+		text-align: center;
+	}
+
+	/* INDEX             */
+	#logo > img {
+		width: 100%;
+	}
+
+	#search{
+		width: 80%;
+		text-align: center;
+	}
+	/* RESULTS           */
+	#results-header {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		margin-top:5px;
+		border-bottom: 2px solid #337ab7;
+	}
+
+	#results-header #logo > img {
+		width: 50%;
+	}
+
+	#header-form {
+		width: 100%;
+		margin-bottom: 5px;
+	}
+
+	#header-form .form-group {
+		margin: 0;
+	}
+
+	#header-form .form-control {
+		width: 100%;
+	}
+
+	#contact {
+		width: 100%;
+		text-align: center;
+	}
+
+	#margin-wrapper {
+		margin: 0 2px !important;
+	}
+
+	#margin-wrapper #manufacturer {
+		text-align: center;
+	}
+
+	table#results {
+	    width: 100% !important;
+	}
 }
 
-/* INDEX             */
-#logo > img {
-	width: 100%;
+/*********************/
+/* NOT MOBILE        */
+/*********************/
+@media only screen and (min-width: 768px) {
+  .table-responsive {
+    overflow-x: hidden;
+    width: 99%;
+  }
 }
-
-#search{
-	width: 80%;
-	text-align: center;
-}
-/* RESULTS           */
-#results-header {
-	display: flex;
-	justify-content: space-between;
-	flex-wrap: wrap;
-	margin-top:5px;
-	border-bottom: 2px solid #337ab7;
-}
-
-#results-header #logo > img {
-	width: 50%;
-}
-
-#header-form {
-	width: 100%;
-	margin-bottom: 5px;
-}
-
-#header-form .form-group {
-	margin: 0;
-}
-
-#header-form .form-control {
-	width: 100%;
-}
-
-#contact {
-	width: 100%;
-	text-align: center;
-}
-
-#margin-wrapper {
-	margin: 0 2px !important;
-}
-
-#margin-wrapper #manufacturer {
-	text-align: center;
-}
-
-table#results {
-    width: 100% !important;
-}
-
-
-
-
-
-
-
-
-
-
-
-

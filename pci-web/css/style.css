@@ -87,11 +87,11 @@ div#footer{
 /* INDEX             */
 
 form {
-	width: 30%;
+	width: 40%;
 	margin: auto;
 }
 
-button#submit {
+button#submit, #list {
 	width: 100%;
 }
 

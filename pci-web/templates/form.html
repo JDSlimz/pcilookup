@@ -3,7 +3,7 @@
 
 	<!--Vendor Input-->
 	<div class="form-group row">
-		<label class="col-md-2 control-label" for="ven">Vendor</label>  
+		<label class="col-md-4 control-label" for="ven">Vendor</label>  
 		<div class="col-md-6">
 			<input id="ven" name="ven" placeholder="e.g. 10de or Nvidia" class="form-control input-lg" type="text">
 		</div>
@@ -11,7 +11,7 @@
 
 	<!--Device Input-->
 	<div class="form-group row">
-		<label class="col-md-2 control-label" for="dev">Device</label>  
+		<label class="col-md-4 control-label" for="dev">Device</label>  
 		<div class="col-md-6">
 			<input id="dev" name="dev" placeholder="e.g. 010b or 1080 TI" class="form-control input-lg" type="text">
 		</div>
@@ -19,9 +19,17 @@
 
 	<!--Submit Button-->
 	<div class="form-group row">
-		<label class="col-md-2 control-label" for="submit"></label>
+		<label class="col-md-4 control-label" for="submit"></label>
 		<div class="col-md-6">
 			<button id="submit" name="action" value="submit" type="submit" class="btn btn-primary">Submit</button>
+		</div>
+	</div>
+
+	<!--Show All Button-->
+	<div class="form-group row">
+		<label class="col-md-4 control-label" for="submit"></label>
+		<div class="col-md-6">
+			<a id="list" type="button" class="btn btn-primary" href="/?ven=&dev=&action=submit">List All Devices</a>
 		</div>
 	</div>
 </form>

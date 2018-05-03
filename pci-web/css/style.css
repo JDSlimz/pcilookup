@@ -177,7 +177,7 @@ button#submit {
 	}
 
 	#margin-wrapper {
-		margin: 0 2px !important;
+		margin: 0 15px !important;
 	}
 
 	#margin-wrapper #manufacturer {
@@ -196,5 +196,6 @@ button#submit {
   .table-responsive {
     overflow-x: hidden;
     width: 99%;
+    padding: 5px;
   }
 }

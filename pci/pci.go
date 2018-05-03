@@ -51,7 +51,7 @@ func readFileAndUpdate(url string){
 		    panic(err2.Error())
 		}
 
-	    db, err := sql.Open("mysql", "pci:"+ passwd.GetSQLPassword() +"@tcp(127.0.0.1:3306)/pci-dev")
+	    db, err := sql.Open("mysql", "pci:"+ passwd.GetSQLPassword() +"@tcp(127.0.0.1:3307)/pci-dev")
 		if err != nil {
 			println(err)
 		}
@@ -129,7 +129,7 @@ func searchForDevices(vendor, dev string) ([]Device){
 
 	devices := []Device{}
 
-	db, err := sql.Open("mysql", "pci:"+ passwd.GetSQLPassword() +"@tcp(127.0.0.1:3306)/pci-dev")
+	db, err := sql.Open("mysql", "pci:"+ passwd.GetSQLPassword() +"@tcp(127.0.0.1:3307)/pci-dev")
 	if err != nil {
 		println(err)
 	}
@@ -186,5 +186,5 @@ func hello(w http.ResponseWriter, r *http.Request) {
 //////////////////////////////////////////////////////////////////////////////////////////////////
 func main() {
 	http.HandleFunc("/", hello)
-	http.ListenAndServe(":8500", nil)
+	http.ListenAndServe(":8000", nil)
 }

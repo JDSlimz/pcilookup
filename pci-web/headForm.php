@@ -1,4 +1,6 @@
-{{define "headForm"}}
+<?php
+
+?>
 <form id="header-form" class="form-horizontal" style="margin-top:5px;">
 
 	<!-- Text input-->
@@ -24,4 +26,3 @@
 	</div>
 
 </form>
-{{end}}

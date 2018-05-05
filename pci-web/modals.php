@@ -128,8 +128,8 @@
         <h4 class="modal-title">Donate Bitcoin</h4>
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
-      <div class="modal-body">
-        <img src="/img/ltcqr.png" />
+      <div class="modal-body" style="text-align: center;">
+        <img src="/img/btcqr.png" />
         <p class="address">1FXCiDcZKswWw1j99tKoTANDqUMjv6TUYR</p>
       </div>
       <div class="modal-footer">
@@ -150,7 +150,7 @@
         <h4 class="modal-title">Donate Litecoin</h4>
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body" style="text-align: center;">
       	<img src="/img/ltcqr.png" />
         <p class="address">LM4sL1m1YLoMMUnVptcHRrdV6mu96XPNxS</p>
       </div>
@@ -172,7 +172,7 @@
         <h4 class="modal-title">Donate Iota</h4>
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body" style="text-align: center;">
       	<img src="/img/iotaqr.png" />
         <p class="address">UXVJIHQVOMLILKXVPNOHBQGVEOPMXOFVKJSNCJAWXSNJH9PYFORHBDKSZAJMUC9CSGBO9ISP9RYZEBMIBAAVTBO9JD</p>
       </div>

@@ -29,7 +29,7 @@ if(isset($_GET['pass'])){
 }
 
 //Connect to database
-$servername = "localhost";
+$servername = "localhost:3307";
 $username = "pci";
 $password = mysqlPass();
 

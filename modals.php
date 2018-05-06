@@ -12,7 +12,7 @@
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
       <div class="modal-body">
-      		<form class="form-horizontal">
+      		<form class="form-horizontal" style="width:100%; text-align:center;">
 
 				<!-- Name input-->
 				<div class="form-group row">

@@ -6,12 +6,6 @@ $vendor = "";
 $device = "";
 $pass = "";
 
-//Variables for survey
-$ableToFind = "";
-$deviceInfo = "";
-$overallRating = "";
-$comments = "";
-
 class Device {
 	public $id;
 	public $desc;
@@ -64,14 +58,18 @@ function searchList($con, $vendor, $device){
 	if ($result=mysqli_query($con,$sql)){
 		// Fetch one and one row
 		while ($row=mysqli_fetch_row($result)){
-			$device = new Device($row[0], $row[1], $row[2], $row[3]);
+			$device = new Device(utf8_encode($row[0]), utf8_encode($row[1]), utf8_encode($row[2]), utf8_encode($row[3]));
+			//var_dump($device);
 			array_push($devices, $device);
+			//echo $row[0] . ":" . $row[1] . ":" . $row[2] . ":" . $row[3] .  "<br>";
 		}
 		// Free result set
 		mysqli_free_result($result);
 	}
 	mysqli_close($con);
-	echo json_encode($devices);
+	var_dump(json_encode($devices));
+	echo json_last_error();
+//	echo json_encode($devices);
 }
 
 function readFileAndUpdate($con, $url){
@@ -107,6 +105,8 @@ function readFileAndUpdate($con, $url){
 					$vendorID = $thisVendor[0];
 					$vendorDesc = $thisVendor[1];
 
+					echo utf8_encode($deviceID) . "<br>";
+
 					$device = new Device(trim(preg_replace('/\s+/S', '',$deviceID)), $deviceDesc, $vendorID, $vendorDesc);
 					array_push($devices, $device);
 				} else if(strspn($line, "\t") === 2){
@@ -116,6 +116,8 @@ function readFileAndUpdate($con, $url){
 					$deviceDesc = $thisDevice[2];
 					$vendorID = $thisVendor[0];
 					$vendorDesc = $thisVendor[1];
+
+                                        echo utf8_encode($deviceID) . "<br>";
 
 					$device = new Device(trim(preg_replace('/\s+/S', '',$deviceID)), $deviceDesc, $vendorID, $vendorDesc);
 					array_push($devices, $device);
@@ -144,48 +146,10 @@ function readFileAndUpdate($con, $url){
 	
 }
 
-function submitSurvey($con){
-	if(isset($_GET['ableToFind'])){
-		$ableToFind = mysqli_real_escape_string($con, $_GET['ableToFind']);
-	}
-	if(isset($_GET['deviceInfo'])){
-		$deviceInfo = mysqli_real_escape_string($con, $_GET['deviceInfo']);
-	}
-	if(isset($_GET['overallRating'])){
-		$overallRating = intval($_GET['overallRating']);
-	}
-	if(isset($_GET['comments'])){
-		$comments = mysqli_real_escape_string($con, $_GET['comments']);
-	}
-	
-	$query = "INSERT INTO survey (ableToFind, deviceInfo, overallRating, comments) VALUES (?, ?, ?, ?)";
-	$stmt = $con->prepare($query);
-	$con->query("START TRANSACTION");
-	$stmt ->bind_param("ssss", $ableToFind, $deviceInfo, $overallRating, $comments);
-	$stmt->execute();
-	$stmt->close();
-	$con->query("COMMIT");
-	
-	$headers  = "From: " . $_GET['name'] . " < " . $_GET['email'] . " >\n";
-    $headers .= "X-Sender: " . $_GET['name'] . " < " . $_GET['email'] . " >\n";
-    $headers .= 'X-Mailer: PHP/' . phpversion();
-    $headers .= "X-Priority: 1\n";
-    $headers .= "MIME-Version: 1.0\r\n";
-    $headers .= "Content-Type: text/html; charset=iso-8859-1\n";
-	
-	$to = 'josh@pcilookup.com';
-	$subject = 'PCI Lookpup Survey';
-	$msg = $ableToFind . " " . $deviceInfo . " " . $overallRating . " " . $comments;
-	
-	mail($to, $subject, $msg, $headers);
-}
-
 if($action == "search"){
 	searchList($conn, $vendor, $device);
 } else if($action == "update" && $pass == apiPass()){
 	readFileAndUpdate($conn, "https://pci-ids.ucw.cz/v2.2/pci.ids");
 	readFileAndUpdate($conn, "http://www.linux-usb.org/usb.ids");
-} else if($action == "survey"){
-	submitSurvey($conn);
 }
 ?>

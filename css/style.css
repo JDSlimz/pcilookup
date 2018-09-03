@@ -26,7 +26,7 @@ div#header {
 }
 
 #menu{
-	width: 25%;
+	width: 50%;
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
@@ -34,14 +34,35 @@ div#header {
 	break-after: always;
 }
 
-div#help, div#contact{
+div#help, div#contact, div#survey{
 	cursor: pointer;
-	margin: 0px 5px;
+	margin: 0px 10px;
 	max-width: 25%;
+	height: 50%;
 }
 
 #logo img, #help>img, #contact>img{
 	max-width: 100%;
+}
+
+#help span{
+	color: #337ab7;
+	font-size: 2em;
+}
+
+#contact span{
+	color: #337ab7;
+	font-size: 2.5em;
+}
+
+#survey span{
+	color: #337ab7;
+	font-size: 2.5em;
+	cursor: pointer;
+	-webkit-animation: pulse 3s infinite;
+	-moz-animation: pulse 3s infinite;
+	-ms-animation: pulse 3s infinite;
+	animation: pulse 3s infinite;
 }
 
 div#adspace {
@@ -84,6 +105,28 @@ div#footer{
 
 .address{
 	word-wrap: break-word;
+}
+
+/****Survey Modal****/
+#surveyModal .control-label{
+	text-align: right;
+	font-weight: bold;
+}
+
+#surveyModal .row{
+	transition:background-color 1s ease;
+	background-color: transparent;
+}
+
+#surveyModal .error{
+	background-color: rgba(220, 53, 69, 0.7);
+}
+
+#surveyModal input[type='checkbox'],
+#surveyModal input[type='radio'] {
+  display: inline;
+  margin-right: 10px;
+  font-size: 16px;
 }
 
 /* INDEX             */
@@ -135,6 +178,26 @@ button#submit, #list {
 	/* EVERYWHERE        */
 	#logo {
 		display: block;
+		text-align: center;
+	}
+	
+	#menu {
+		align-items: start;
+	}
+	
+	#help span{
+		font-size: 1em;
+	}
+
+	#contact span{
+		font-size: 1.5em;
+	}
+
+	#survey span{
+		font-size: 1.5em;
+	}
+	
+	#surveyModal .control-label {
 		text-align: center;
 	}
 
@@ -200,4 +263,25 @@ button#submit, #list {
     width: 99%;
     padding: 5px;
   }
+}
+
+/********************/
+/*PULSING CSS       */
+/********************/
+@-webkit-keyframes pulse {
+    0% { -webkit-transform: scale(0.9); opacity: 0.7; }
+    50% { -webkit-transform: scale(1); opacity: 1; }
+    100% { -webkit-transform: scale(0.9); opacity: 0.7; }
+}
+
+@-moz-keyframes pulse {
+    0% { transform: scale(0.9); opacity: 0.7; }
+    50% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(0.9); opacity: 0.7; }
+}
+
+@keyframes pulse {
+    0% { transform: scale(0.9); opacity: 0.7; }
+    50% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(0.9); opacity: 0.7; }
 }

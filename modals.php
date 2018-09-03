@@ -184,3 +184,99 @@
   </div>
 </div>
 </div>
+
+<!-- Survey Modal -->
+<div id="surveyModal" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-lg">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Survey!</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+			<p style="width:90%; text-align:center; margin: 10px auto;">Thank you for taking our short survey! Your input will help us better serve you!</p>
+      		<form id="surveyForm" class="form-horizontal needs-validation" style="width:100%; text-align:center;">
+			  <div id="ableToFindContainer" class="form-group row">
+				<label for="ableToFind" class="control-label col-sm-6">Were you able to find your device?</label> 
+				<div class="col-sm-6">
+				  <label class="radio-inline">
+					<input class="form-control" name="ableToFind" value="yes" type="radio">
+						  Yes
+				  </label>
+				  <label class="radio-inline">
+					<input class="form-control" name="ableToFind" value="no" type="radio">
+						  No
+				  </label>
+				</div>
+			  </div>
+			  <div class="form-group row">
+				<label for="deviceInfo" class="control-label col-sm-6">If not, what is the devices information?</label> 
+				<div class="col-sm-6">
+				  <input id="deviceInfo" name="deviceInfo" class="form-control" type="text">
+				</div>
+			  </div>
+			  <div id="overallRatingContainer" class="form-group row">
+				<label for="overallRating" class="control-label col-sm-6">Overall Rating</label> 
+				<div class="col-sm-6">
+				  <label class="radio-inline">
+					<input class="form-control" name="overallRating" value="1" type="radio">
+						  1
+				  </label>
+				  <label class="radio-inline">
+					<input class="form-control" name="overallRating" value="2" type="radio">
+						  2
+				  </label>
+				  <label class="radio-inline">
+					<input class="form-control" name="overallRating" value="3" type="radio">
+						  3
+				  </label>
+				  <label class="radio-inline">
+					<input class="form-control" name="overallRating" value="4" type="radio">
+						  4
+				  </label>
+				  <label class="radio-inline">
+					<input class="form-control" name="overallRating" value="5" type="radio">
+						  5
+				  </label>
+				  <label class="radio-inline">
+					<input class="form-control" name="overallRating" value="6" type="radio">
+						  6
+				  </label>
+				  <label class="radio-inline">
+					<input class="form-control" name="overallRating" value="7" type="radio">
+						  7
+				  </label>
+				  <label class="radio-inline">
+					<input class="form-control" name="overallRating" value="8" type="radio">
+						  8
+				  </label>
+				  <label class="radio-inline">
+					<input class="form-control" name="overallRating" value="9" type="radio">
+						  9
+				  </label>
+				  <label class="radio-inline">
+					<input class="form-control" name="overallRating" value="10" type="radio">
+						  10
+				  </label>
+				</div>
+			  </div>
+			  <div class="form-group row">
+				<label for="comments" class="control-label col-sm-6">Comments, suggestions, or requests:</label> 
+				<div class="col-sm-6">
+				  <textarea id="comments" name="comments" cols="40" rows="5" class="form-control"></textarea>
+				</div>
+			  </div> 
+			  <div class="form-group row">
+				<div class="col-xs-offset-4 col-xs-8" style="margin: 0 auto;">
+				  <input id="action" name="action" type="hidden" value="survey">
+				  <button name="submit" type="button"  onClick="submitSurvey()" class="btn btn-primary">Submit</button>
+				</div>
+			  </div>
+			</form>
+      </div>
+    </div>
+
+  </div>
+</div>

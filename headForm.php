@@ -12,12 +12,7 @@
 	<div class="form-group">
 		<input id="dev" name="dev" type="text" placeholder="Device" class="form-control input-md">
 	</div>
-
-	<!-- Text input-->
-	<!-- <div class="form-group">
-		<input id="sub" name="sub" type="text" placeholder="Sub-Device" class="form-control input-md">
-	</div> -->
-
+	
 	<!-- Button -->
 	<div class="form-group">
 		<div class="col-md-4">

@@ -183,6 +183,27 @@
 
   </div>
 </div>
+
+<!-- Nano Modal -->
+<div id="nanoModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Donate Nano</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body" style="text-align: center;">
+      	<img src="/img/nanoqr.png" />
+        <p class="address">xrb_3n3tdajap6cw83nspz1uj4t4cc1wmgzd8yxpbd85bfga5xb58gwpayt3hix9</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
 </div>
 
 <!-- Survey Modal -->

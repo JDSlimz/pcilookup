@@ -8,6 +8,7 @@
 				<img class="coinLogo" src="/img/iotalogo.png" data-toggle="modal" data-target="#iotaModal" />
 				<img class="coinLogo" src="/img/btclogo.png" data-toggle="modal" data-target="#btcModal" />
 				<img class="coinLogo" src="/img/ltclogo.png" data-toggle="modal" data-target="#ltcModal" />
+				<img class="coinLogo" src="/img/nanologo.png" data-toggle="modal" data-target="#nanoModal" />
 				
 				
 

@@ -77,11 +77,11 @@ function searchList($con, $vendor, $device){
 function readFileAndUpdate($con, $url){
 	set_time_limit(300) ;
 
-	$cSession = curl_init(); 
+	$cSession = curl_init();
 	//step2
 	curl_setopt($cSession,CURLOPT_URL,$url);
 	curl_setopt($cSession,CURLOPT_RETURNTRANSFER,true);
-	curl_setopt($cSession,CURLOPT_HEADER, false); 
+	curl_setopt($cSession,CURLOPT_HEADER, false);
 	//step3
 	$result=curl_exec($cSession);
 	//step4
@@ -93,7 +93,7 @@ function readFileAndUpdate($con, $url){
 	$devices = [];
 
 	foreach ($result as $line) {
-		if (substr($line, 0, 1) != '#' && $line != "") { 
+		if (substr($line, 0, 1) != '#' && $line != "") {
 			if(strspn($line, "\t") === 0){
 				//Line is a vendor, save for future use!
 				$thisVendor = explode(' ', $line, 2);
@@ -128,11 +128,11 @@ function readFileAndUpdate($con, $url){
 
 	$query = "INSERT INTO devices (id, descrip, venid, vendesc) VALUES (?, ?, ?, ?)";//ON DUPLICATE KEY UPDATE descrip=?
 	$stmt = $con->prepare($query);
-	
+
 	$con->query("START TRANSACTION");
 	$count = 0;
 	foreach ($devices as $device) {
-		$stmt ->bind_param("ssss", $device->id, $device->desc, $device->venID, $device->venDesc);//, $device->desc
+		$stmt->bind_param("ssss", $device->id, $device->desc, $device->venID, $device->venDesc);//, $device->desc
 		$stmt->execute();
 		$count++;
 	}
@@ -141,7 +141,7 @@ function readFileAndUpdate($con, $url){
 	$stmt->close();
 	$con->query("COMMIT");
 
-	
+
 }
 
 function submitSurvey($con){
@@ -157,7 +157,7 @@ function submitSurvey($con){
 	if(isset($_GET['comments'])){
 		$comments = mysqli_real_escape_string($con, $_GET['comments']);
 	}
-	
+
 	$query = "INSERT INTO survey (ableToFind, deviceInfo, overallRating, comments) VALUES (?, ?, ?, ?)";
 	$stmt = $con->prepare($query);
 	$con->query("START TRANSACTION");
@@ -165,18 +165,18 @@ function submitSurvey($con){
 	$stmt->execute();
 	$stmt->close();
 	$con->query("COMMIT");
-	
+
 	$headers  = "From: " . $_GET['name'] . " < " . $_GET['email'] . " >\n";
     $headers .= "X-Sender: " . $_GET['name'] . " < " . $_GET['email'] . " >\n";
     $headers .= 'X-Mailer: PHP/' . phpversion();
     $headers .= "X-Priority: 1\n";
     $headers .= "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: text/html; charset=iso-8859-1\n";
-	
+
 	$to = 'josh@pcilookup.com';
 	$subject = 'PCI Lookpup Survey';
 	$msg = $ableToFind . " " . $deviceInfo . " " . $overallRating . " " . $comments;
-	
+
 	mail($to, $subject, $msg, $headers);
 }
 

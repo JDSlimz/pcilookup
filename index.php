@@ -4,7 +4,7 @@ require_once('header.php');
 
 if(isset($_GET['action']) && $_GET['action'] == "submit"){
 	require_once('resultsTable.php');
-} else if(isset($_GET['action']) && $_GET['action'] == "message" && isset($_GET['recaptcha_response']))){
+} else if(isset($_GET['action']) && $_GET['action'] == "message" && isset($_GET['recaptcha_response'])){
 
     // Build POST request:
     $recaptcha_url = 'https://www.google.com/recaptcha/api/siteverify';

@@ -1,6 +1,4 @@
 <?php
-	include_once $_SERVER['DOCUMENT_ROOT'] . '/securimage/securimage.php';
-	$securimage = new Securimage();
 ?>
 <!-- Contact Modal -->
 <div id="contactModal" class="modal fade" role="dialog">

@@ -38,10 +38,10 @@
 				</div>
 
 				<!-- CAPTCHA -->
-				<script src="https://www.google.com/recaptcha/api.js?render=6Ldbm6sUAAAAAP5Bf8Griov3CARCxvz8e46B0oEJ"></script>
+				<script src="https://www.google.com/recaptcha/api.js?render=6LePvKsUAAAAAJnSLJCdNz86h6KhLhcVCDdhQfDt"></script>
 			    <script>
 			        grecaptcha.ready(function () {
-			            grecaptcha.execute('6Ldbm6sUAAAAAP5Bf8Griov3CARCxvz8e46B0oEJ', { action: 'contact' }).then(function (token) {
+			            grecaptcha.execute('6LePvKsUAAAAAJnSLJCdNz86h6KhLhcVCDdhQfDt', { action: 'contact' }).then(function (token) {
 			                var recaptchaResponse = document.getElementById('recaptchaResponse');
 			                recaptchaResponse.value = token;
 			            });

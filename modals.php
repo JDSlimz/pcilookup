@@ -16,7 +16,7 @@
 				<!-- Name input-->
 				<div class="form-group row">
 					<label class="col-md-3 control-label" for="name">Name</label>  
-					<div class="col-md-6">
+					<div class="col-md-8">
 						<input id="name" name="name" type="text" placeholder="" class="form-control input-md" required="">
 					</div>
 				</div>
@@ -24,7 +24,7 @@
 				<!-- Email input-->
 				<div class="form-group row">
 					<label class="col-md-3 control-label" for="email">E-Mail</label>  
-					<div class="col-md-6">
+					<div class="col-md-8">
 						<input id="email" name="email" type="email" placeholder="" class="form-control input-md" required="">
 					</div>
 				</div>
@@ -32,7 +32,7 @@
 				<!-- Textarea -->
 				<div class="form-group row">
 				  <label class="col-md-3 control-label" for="message">Message</label>
-				  <div class="col-md-6">                     
+				  <div class="col-md-8">                     
 				    <textarea class="form-control" id="message" name="message">What do you have to say?</textarea>
 				  </div>
 				</div>

@@ -1,5 +1,6 @@
 <?php
-
+	include_once $_SERVER['DOCUMENT_ROOT'] . '/securimage/securimage.php';
+	$securimage = new Securimage();
 ?>
 <!-- Contact Modal -->
 <div id="contactModal" class="modal fade" role="dialog">
@@ -37,6 +38,18 @@
 				    <textarea class="form-control" id="message" name="message">What do you have to say?</textarea>
 				  </div>
 				</div>
+
+				<!-- CAPTCHA -->
+				<script src="https://www.google.com/recaptcha/api.js?render=6Ldbm6sUAAAAAP5Bf8Griov3CARCxvz8e46B0oEJ"></script>
+			    <script>
+			        grecaptcha.ready(function () {
+			            grecaptcha.execute('6Ldbm6sUAAAAAP5Bf8Griov3CARCxvz8e46B0oEJ', { action: 'contact' }).then(function (token) {
+			                var recaptchaResponse = document.getElementById('recaptchaResponse');
+			                recaptchaResponse.value = token;
+			            });
+			        });
+			    </script>
+			    <input type="hidden" name="recaptcha_response" id="recaptchaResponse">
 
 				<!-- Button -->
 				<div class="form-group row">

@@ -33,7 +33,7 @@
 				<div class="form-group row">
 				  <label class="col-md-3 control-label" for="message">Message</label>
 				  <div class="col-md-8">                     
-				    <textarea class="form-control" id="message" name="message">What do you have to say?</textarea>
+				    <textarea class="form-control" id="message" name="message"></textarea>
 				  </div>
 				</div>
 

@@ -1,4 +1,5 @@
 <?php
+require_once('pass.php');
 require_once('head.php');
 require_once('header.php');
 
@@ -8,7 +9,7 @@ if(isset($_GET['action']) && $_GET['action'] == "submit"){
 
     // Build POST request:
     $recaptcha_url = 'https://www.google.com/recaptcha/api/siteverify';
-    $recaptcha_secret = '6Ldbm6sUAAAAAJnxNGYYGxFReAlcS_seZGAZBRpd';
+    $recaptcha_secret = grcKey();
     $recaptcha_response = $_GET['recaptcha_response'];
 
     // Make and decode POST request:

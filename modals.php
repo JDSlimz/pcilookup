@@ -140,7 +140,7 @@
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
       <div class="modal-body" style="text-align: center;">
-        <img src="/img/btcqr.png" />
+        <img src="/img/btcqr.PNG" />
         <p class="address">1FXCiDcZKswWw1j99tKoTANDqUMjv6TUYR</p>
       </div>
       <div class="modal-footer">
@@ -162,7 +162,7 @@
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
       <div class="modal-body" style="text-align: center;">
-      	<img src="/img/ltcqr.png" />
+      	<img src="/img/ltcqr.PNG" />
         <p class="address">LM4sL1m1YLoMMUnVptcHRrdV6mu96XPNxS</p>
       </div>
       <div class="modal-footer">

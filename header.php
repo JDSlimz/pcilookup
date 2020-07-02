@@ -18,5 +18,9 @@
 				require_once('headForm.php');
 			}
 		?>
+
+        <div style="text-align:center;">
+            <h3 style="text-align:center; color:red;">Due to repeated attacks, PCI Lookup will be down for no more than 2 days while the platform is scrubbed and secured.</h3>
 	</div>
+        </div>
 	</header>

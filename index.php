@@ -7,27 +7,27 @@ if(isset($_GET['action']) && $_GET['action'] == "submit"){
 	require_once('resultsTable.php');
 } else if(isset($_GET['action']) && $_GET['action'] == "message" && isset($_GET['recaptcha_response'])){
 
-    // Build POST request:
-    $recaptcha_url = 'https://www.google.com/recaptcha/api/siteverify';
-    $recaptcha_secret = grcKey();
-    $recaptcha_response = $_GET['recaptcha_response'];
+	// Build POST request:
+	$recaptcha_url = 'https://www.google.com/recaptcha/api/siteverify';
+	$recaptcha_secret = grcKey();
+	$recaptcha_response = $_GET['recaptcha_response'];
 
-    // Make and decode POST request:
-    $recaptcha = file_get_contents($recaptcha_url . '?secret=' . $recaptcha_secret . '&response=' . $recaptcha_response);
-    $recaptcha = json_decode($recaptcha);
+	// Make and decode POST request:
+	$recaptcha = file_get_contents($recaptcha_url . '?secret=' . $recaptcha_secret . '&response=' . $recaptcha_response);
+	$recaptcha = json_decode($recaptcha);
 
-    // Take action based on the score returned:
-    if ($recaptcha->score >= 0.5) {
-        // Verified - send email
-        $to = 'josh@pcilookup.com';
+	// Take action based on the score returned:
+	if ($recaptcha->score >= 0.5) {
+		// Verified - send email
+		$to = 'josh@pcilookup.com';
 		$subject = 'PCI Lookpup Contact Form';
 		$msg = $_GET['name'] . "<br>" . $_GET['email'] . "<br>" . $_GET['message'];
 		$headers  = "From: " . $_GET['name'] . " < " . $_GET['email'] . " >\n";
-	    $headers .= "X-Sender: " . $_GET['name'] . " < " . $_GET['email'] . " >\n";
-	    $headers .= 'X-Mailer: PHP/' . phpversion();
-	    $headers .= "X-Priority: 1\n"; // Urgent message!
-	    $headers .= "MIME-Version: 1.0\r\n";
-	    $headers .= "Content-Type: text/html; charset=iso-8859-1\n";
+		$headers .= "X-Sender: " . $_GET['name'] . " < " . $_GET['email'] . " >\n";
+		$headers .= 'X-Mailer: PHP/' . phpversion();
+		$headers .= "X-Priority: 1\n"; // Urgent message!
+		$headers .= "MIME-Version: 1.0\r\n";
+		$headers .= "Content-Type: text/html; charset=iso-8859-1\n";
 
 		if(mail($to, $subject, $msg, $headers))
 		{
@@ -54,10 +54,10 @@ if(isset($_GET['action']) && $_GET['action'] == "submit"){
 			</script>
 			<?php
 		}
-    } else {
-        // Not verified - show form error
-    }
-    require_once('form.php');
+	} else {
+		// Not verified - show form error
+	}
+	require_once('form.php');
 } else {
 	require_once('form.php');
 }

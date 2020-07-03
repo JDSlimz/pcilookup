@@ -5,6 +5,7 @@ require_once('header.php');
 
 if(isset($_GET['action']) && $_GET['action'] == "submit"){
 	require_once('resultsTable.php');
+	$owa->setPageTitle('results');
 } else if(isset($_GET['action']) && $_GET['action'] == "message" && isset($_GET['recaptcha_response'])){
 
 	// Build POST request:

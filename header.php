@@ -1,5 +1,9 @@
 <?php
-
+require_once('/var/www/owa/owa_php.php');
+$owa = new owa_php();
+$owa->setSiteId('03a075f28945bb3c70eaae6676044fc5');
+$owa->setPageTitle('home');
+$owa->trackPageView();
 ?>
 <header>
 	<div id="header">

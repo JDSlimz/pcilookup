@@ -11,8 +11,10 @@
 				<img class="coinLogo" src="/img/nanologo.png" data-toggle="modal" data-target="#nanoModal" />
 			</div>
 
-			<h5>This site is hosted on Vultr. You can help keep it running and get some free VPS time at the same time!</h5>
-			<a href="https://www.vultr.com/?ref=8374849-6G"><img src="https://www.vultr.com/media/banners/banner_468x60.png" width="468" height="60"></a>
+			<div id="vultrBanner">
+				<small>This site is hosted on Vultr. You can help keep it running and get some free VPS time at the same time!</small>
+				<a href="https://www.vultr.com/?ref=8374849-6G"><img src="https://www.vultr.com/media/banners/banner_468x60.png" width="468" height="60"></a>
+			</div>
 
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 			<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>

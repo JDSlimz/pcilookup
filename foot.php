@@ -10,7 +10,7 @@
 				<img class="coinLogo" src="/img/ltclogo.png" data-toggle="modal" data-target="#ltcModal" />
 				<img class="coinLogo" src="/img/nanologo.png" data-toggle="modal" data-target="#nanoModal" />
 			</div>
-
+			<br>
 			<div id="vultrBanner">
 				<small>This site is hosted on Vultr. You can help keep it running and get some free VPS time at the same time!</small>
 				<br>

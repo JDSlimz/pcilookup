@@ -2,12 +2,16 @@
 require_once('pass.php');
 require_once('head.php');
 require_once('header.php');
+require_once('/var/www/owa/owa_php.php');
+$owa = new owa_php();
+$owa->setSiteId('03a075f28945bb3c70eaae6676044fc5');
+
 
 if(isset($_GET['action']) && $_GET['action'] == "submit"){
 	require_once('resultsTable.php');
 	$owa->setPageTitle('results');
 } else if(isset($_GET['action']) && $_GET['action'] == "message" && isset($_GET['recaptcha_response'])){
-
+	$owa->setPageTitle('message');
 	// Build POST request:
 	$recaptcha_url = 'https://www.google.com/recaptcha/api/siteverify';
 	$recaptcha_secret = grcKey();
@@ -60,9 +64,10 @@ if(isset($_GET['action']) && $_GET['action'] == "submit"){
 	}
 	require_once('form.php');
 } else {
+	$owa->setPageTitle('home');
 	require_once('form.php');
 }
-
+$owa->trackPageView();
 require_once('modals.php');
 require_once('foot.php');
 ?>

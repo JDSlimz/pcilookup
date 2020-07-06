@@ -17,9 +17,10 @@
 			<script src="/js/script.js"></script>
 		</div>
 		<div id="vultrBanner" style="text-align:center;">
-			<small>This site is hosted on Vultr. You can help keep it running and get some free VPS time at the same time!</small>
+			<ins class="adsbycontextcue" data-cc-site="c9802e56-ddeb-431b-ae9e-4798ae4a85c3" data-cc-slot="s68ZBKCaQ" style="display:block;"></ins>
+			<!--<small>This site is hosted on Vultr. You can help keep it running and get some free VPS time at the same time!</small>
 			<br>
-			<a href="https://www.vultr.com/?ref=8374849-6G"><img src="https://www.vultr.com/media/banners/banner_468x60.png" width="468" height="60"></a>
+			<a href="https://www.vultr.com/?ref=8374849-6G"><img src="https://www.vultr.com/media/banners/banner_468x60.png" width="468" height="60"></a>-->
 		</div>
 	</body>
 </html>

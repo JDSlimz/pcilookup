@@ -14,6 +14,7 @@
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 			<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
 			<script src="/js/bootstrap.min.js"></script>
+			<script async src="https://cdn.contextcue.com/adsbycontextcue.js"></script>
 			<script src="/js/script.js"></script>
 		</div>
 		<div id="vultrBanner" style="text-align:center;">
